@@ -1,0 +1,70 @@
+\section{Introduction}
+
+This documents details the procedure to maintain software versions updated and operating system security patches. 
+
+The scope of this document applies to all IT computer and network devices installed in Rubin's network
+
+While there are many responses to vulnerabilities that could have potentially the same effect of mitigating the risk, this document will only consider the patching process. 
+
+
+\section{Definitions}
+
+\begin{itemize}
+    \item Severity: Impact of the vulnerability that the patch is suppose to correct. 
+    \item Patching Started: Time when the patching process starts. It should always start in the development environment and it is further explained in Risk Response Execution section 
+    \item Patching Completed: Time when the patching process has completed. This is when production environment is patched against the vulnerability
+\end{itemize}
+
+\section{Vulnerability Management}
+
+\subsection{Acknowledge of the Vulnerability}
+
+TBD
+
+\subsection{Plan Response}
+
+The response to the vulnerability will be planned according to its severity.
+
+The scheduling of the response will be communicated during the CAP and Summit Coordinations meetings. 
+
+
+\subsubsection{Patch Priority}
+
+Priority of the patch will be based on the severity of the vulnerability.
+Severity ratings are based on the \href{https://nvd.nist.gov/vuln-metrics/cvss}{Common Vulnerability Scoring System}.  
+
+\begin{center}
+    \begin{tabular}{ |>{\columncolor[gray]{0.8}}p{3cm}||p{5cm}|p{5cm}|  }
+        \hline
+        \rowcolor{lightgray}
+        Severity& Patching Started & Patching Completed\\
+        \hline
+        Critical   & Within 48 hours of patch release    & Within 1 week of patch release\\
+        \hline
+        High&   Within 72 hours of patch release  & Within 2 weeks of patch release\\
+        \hline
+        Medium & Within 1 week of patch release & Within 3 weeks of patch release\\
+        \hline
+        Low    & Within 1 month of patch release & Within 2 months of patch release\\
+        \hline
+       \end{tabular}
+\end{center}
+
+
+\subsection{Execute Response}
+
+The execution of the response will follow this sequence
+
+\begin{itemize}
+    \item Deployment in Development Environemt (TTS)
+    \item Schedule Deployment in Testing Environemt (BTS)
+    \item Schedule Deployment in Production Environemt
+\end{itemize}
+
+However, under very particular conditions related to the severity and impact of the vulnerability, the sequence may be modified. 
+
+\section{Exceptions}
+
+All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 cycles before its corresponding patching. 
+
+Systems under the exception list will receive additional network controls to mitiage risks. 
