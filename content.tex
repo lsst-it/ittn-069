@@ -1,8 +1,13 @@
 \section{Introduction}
 
-This documents details the procedure to maintain software versions updated and operating system security patches. 
 
-The scope of this document applies to all IT computer and network devices installed in Rubin's network
+The Rubin Observatory operates a complex software system to process and analyze data from its astronomical surveys. 
+
+The software patching strategy is a crucial aspect of their overall approach to maintaining the reliability and functionality of their software systems. As with any large-scale software system, vulnerabilities and bugs can arise over time, making it essential to have a well-defined process for identifying, testing, and deploying patches and updates. This document will provide an overview of the Rubin Observatory's software patching strategy, including their approach to vulnerability management, testing and release processes, and communication with stakeholders.
+
+\section{Scope}
+
+This document will focus specifically on the Rubin Observatory's software patching strategy for operating systems and network devices. This includes their approach to identifying and prioritizing patches for these systems, testing and deploying patches in a timely and effective manner, and ensuring that all relevant stakeholders are informed of any updates or changes to the patching process. The document will not cover other aspects of the Observatory's software systems, such as application software or databases, which may have their own unique patching requirements and processes.
 
 While there are many responses to vulnerabilities that could have potentially the same effect of mitigating the risk, this document will only consider the patching process. 
 
@@ -27,8 +32,9 @@ The DevOps team obtain advisories from all these locations and also receive noti
 
 The response to the vulnerability will be planned according to its severity.
 
-The scheduling of the response will be communicated during the CAP and Summit Coordinations meetings. 
+To ensure that all stakeholders are informed and up-to-date on the latest patches and updates, communication plans are developed for the regular weekly meetings. Approval will be obtained during the CAP meeting and plans will be communicated during the Summit meeting. 
 
+These communication plans typically include a brief overview of the patch or update, including its purpose, any potential impact on operations, and any specific instructions or actions that users may need to take. The plans also outline the timing of the patch deployment and any necessary downtime or maintenance windows. 
 
 \subsubsection{Patch Priority}
 
@@ -53,9 +59,9 @@ Severity ratings are based on the \href{https://nvd.nist.gov/vuln-metrics/cvss}{
 \end{center}
 
 
-\subsection{Execute Response}
+\section{Execution}
 
-The execution of the response will follow this sequence
+Upon approval of the patching cycle in the CAP meeting, the execution of the response will follow this sequence
 
 \begin{itemize}
     \item Deployment in Development Environemt (TTS)
@@ -65,8 +71,31 @@ The execution of the response will follow this sequence
 
 However, under very particular conditions related to the severity and impact of the vulnerability, the sequence may be modified. 
 
+The patching process will typically start at 15:00 UTC 
+to accommodate the staff's several timezones unless the patch's severity mandates immediate action. 
+
+
+\subsection{Roles and Responsabilities}
+
+DevOps Engineer:
+\begin{itemize}
+    \item Identify, test, and deploy the patches. 
+    \item Coordinate with stakeholders the shutdown of the subsystem that may be affected by the patching
+    \item Create Jira tickets to include the activity in the calendar, including affected systems, severity of patches and special instructions, like if the nodes will be rebooted or not. 
+    \item Post a warning message in \#summit-announce at least 24 hours before the patching process is started
+    \item Post an alert message in \#summit-announce 5 minutes before the patching process is started
+    \item Coordinate with stakeholders the recovery of the subsystems and verify their correct functioning 
+    \item Post a "completed" message in \#summit-annnounce when the patching process is completed. 
+\end{itemize}
+
+Software Engineer:
+\begin{itemize}
+    \item Shutdown subsystems that may be affected by the patching (if necessary)
+    \item Recover and verify the subsystems. 
+\end{itemize}
+
 \section{Exceptions}
 
-All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 cycles before its corresponding patching. 
+All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 weeks before its corresponding patching. 
 
 Systems under the exception list will receive additional network controls to mitiage risks. 
