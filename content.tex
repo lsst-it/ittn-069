@@ -75,14 +75,27 @@ The patching process will typically start at 15:00 UTC
 to accommodate the staff's several timezones unless the patch's severity mandates immediate action. 
 
 
+\subsection{Roles and Responsabilities}
 
-\subsection{Roles}
+DevOps Engineer:
+\begin{itemize}
+    \item Identify, test, and deploy the patches. 
+    \item Coordinate with stakeholders the shutdown of the subsystem that may be affected by the patching
+    \item Create Jira tickets to include the activity in the calendar, including affected systems, severity of patches and special instructions, like if the nodes will be rebooted or not. 
+    \item Post a warning message in \#summit-announce at least 24 hours before the patching process is started
+    \item Post an alert message in \#summit-announce 5 minutes before the patching process is started
+    \item Coordinate with stakeholders the recovery of the subsystems and verify their correct functioning 
+    \item Post a "completed" message in \#summit-annnounce when the patching process is completed. 
+\end{itemize}
 
-
-
+Software Engineer:
+\begin{itemize}
+    \item Shutdown subsystems that may be affected by the patching (if necessary)
+    \item Recover and verify the subsystems. 
+\end{itemize}
 
 \section{Exceptions}
 
-All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 cycles before its corresponding patching. 
+All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 weeks before its corresponding patching. 
 
 Systems under the exception list will receive additional network controls to mitiage risks. 
