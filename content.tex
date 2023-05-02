@@ -96,6 +96,83 @@ Software Engineer:
 
 \section{Exceptions}
 
-All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 2 weeks before its corresponding patching. 
+All requests for exceptions to patching must be submitted to the DevOps team using the Jira ticketing system. Requests must be informed at least 1 week before its corresponding patching. 
 
 Systems under the exception list will receive additional network controls to mitiage risks. 
+
+\subsection{Hardware Control Units}
+
+The following items won't be excluded from patching, but the patching process will require further controls and won't be executed unattended. 
+
+While the patches to apply will be listed by the DevOps team, the patching process and recovery of the systems will be done by subject matter experts of these systems.
+
+\subsubsection{Main Camera}
+
+\begin{tabular}{|p{5cm}|p{3cm}|p{5cm}| }
+    \hline
+    \rowcolor{lightgray}
+    Hostname & Location & Comment \\
+    \hline
+    lsstcam-shutter1 & Shutter 1 & At any time, one of shutter 1 or shutter 2 will be mounted on the camera. The other one will be on level 3 \\
+    \hline
+    lsstcam-shutter2 & Shutter 2 & At any time, one of shutter 1 or shutter 2 will be mounted on the camera. The other one will be on level 3 \\
+    \hline
+    lsstcam-rebps & Quadbox & REBPS \\
+    \hline
+    lsstcam-fcs & Quadbox & Filter Changer (fcs) \\
+    \hline
+    lsstcam-qb & Quadbox & Protection HCU \\
+    \hline
+    lsstcam-cryo & Quadbox & Thermal/Vacuum \\
+    \hline
+    lsstcam-chiller1 & TMA & Chiller Control \\
+    \hline
+    lsstcam-chiller2 & Level 1 & Chiller Control (unit 2) \\
+    \hline
+    lsstcam-dc01 & Computer Room & Directly used to talk the REBs via the DAQ \\
+    \hline
+\end{tabular}
+
+\subsubsection{Auxtel}
+
+\begin{tabular}{|p{5cm}|p{3cm}|p{5cm}| }
+    \hline
+    \rowcolor{lightgray}
+    Hostname & Location & Comment \\
+    \hline
+    auxtel-hcu01 & Auxtel Dome & - \\
+    \hline
+    auxtel-fp01 & Computer Room & - \\
+    \hline
+\end{tabular}
+
+\subsubsection{ComCam}
+
+\begin{tabular}{|p{5cm}|p{3cm}|p{5cm}| }
+    \hline
+    \rowcolor{lightgray}
+    Hostname & Location & Comment \\
+    \hline
+    comcam-hcu03 & ComCam Utility Trunk & Shutter+Filter Changer \\
+    \hline
+    comcam-lion01 & ComCam Utility Trunk & Power (quadbox) \\
+    \hline
+    comcam-lion02 & ComCam Utility Trunk & REB PS \\
+    \hline
+    comcam-lion03 & ComCam Utility Trunk & Vacuum / Pathfinder \\
+    \hline
+    comcam-fp01 & Computer Room & - \\
+    \hline
+\end{tabular}
+
+\subsubsection{Pathfinder}
+
+\begin{tabular}{|p{5cm}|p{3cm}|p{5cm}| }
+    \hline
+    \rowcolor{lightgray}
+    Hostname & Location & Comment \\
+    \hline
+    pathfinder-hcu01 & ComCam Utility Trunk & Refrigeration Cabinet and Monitoring \\
+    \hline
+\end{tabular}
+
